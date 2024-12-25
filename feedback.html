@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Rating - Library Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="feedbackcss.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Feedback & Rating</h1>
+
+        <!-- Feedback Form -->
+        <section class="feedback-section">
+            <h2>We Value Your Feedback</h2>
+            
+            <form id="feedback-form">
+                <!-- Rating Slider -->
+                <div class="rating-group">
+                    <label for="rating">Rate Us:</label>
+                    <input type="range" id="rating" name="rating" min="1" max="5" value="3" step="1">
+                    <span id="rating-value">3</span> <!-- Display the current rating value -->
+                </div>
+
+                <!-- Suggestions -->
+                <div class="input-group">
+                    <label for="suggestions">Suggestions:</label>
+                    <textarea id="suggestions" name="suggestions" placeholder="Share your suggestions here..." rows="4" required></textarea>
+                </div>
+
+                <!-- High Points -->
+                <div class="input-group">
+                    <label for="highpoints">High Points of Our Service:</label>
+                    <textarea id="highpoints" name="highpoints" placeholder="What do you like the most?" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <p>Successfully submitted feedback!</p>
+            <button id="closeModal" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and modal display
+       // JavaScript to handle form submission and modal display
+document.getElementById('feedback-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Get rating value
+    const rating = document.getElementById('rating').value;
+    const suggestions = document.getElementById('suggestions').value;
+    const highpoints = document.getElementById('highpoints').value;
+
+    if (rating && suggestions && highpoints) {
+        // Show success modal
+        document.getElementById('successModal').style.display = 'block';
+    } else {
+        alert('Please fill all fields before submitting!');
+    }
+});
+
+// Close the modal when the user clicks the close button
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('successModal').style.display = 'none';
+    window.location.href = "mainpage.html";
+});
+
+// Update the rating value when the slider changes
+document.getElementById('rating').addEventListener('input', function() {
+    const ratingValue = document.getElementById('rating').value;
+    document.getElementById('rating-value').textContent = ratingValue;
+});
+
+    </script>
+
+</body>
+</html>

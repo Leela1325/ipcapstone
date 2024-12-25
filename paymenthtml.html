@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History - Library Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="paymentcss.css">
+</head>
+<body>
+
+    <div class="container payment-history-container">
+        <h2>Payment History</h2>
+
+        <!-- Payment History Table -->
+        <section class="payment-history-section">
+            <h3>Books Payment Details</h3>
+            <table class="payment-table">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Price</th>
+                        <th>Payment Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example of a row with payment details -->
+                    <tr>
+                        <td>The Great Gatsby</td>
+                        <td>$15.99</td>
+                        <td>2024-11-01 14:30:00</td>
+                    </tr>
+                    <tr>
+                        <td>To Kill a Mockingbird</td>
+                        <td>$18.50</td>
+                        <td>2024-10-22 16:00:00</td>
+                    </tr>
+                    <!-- No payment made message -->
+                    <tr class="no-payment">
+                        <td colspan="3">No payments made yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+    </div>
+
+</body>
+</html>

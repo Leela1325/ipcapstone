@@ -1,0 +1,205 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@400;500&display=swap');
+
+/* Apply general font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #9999d6;
+    color: #333;
+
+}
+.check-icon i {
+    font-size: 60px; /* Larger checkmark icon */
+    color: #4CAF50;  /* Green color for success */
+    margin-bottom: 10px;
+}
+
+
+/* Payment Container */
+.payment-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #f9f9ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+}
+
+/* Form Styles */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Labels */
+.payment-form label {
+    margin-top: 10px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: #6c6c6c;
+    transition: color 0.3s ease;
+}
+
+/* Input and Select Fields */
+.payment-form input,
+.payment-form select {
+    margin-top: 5px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Quicksand', sans-serif;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focused input and select */
+.payment-form input:focus,
+.payment-form select:focus {
+    border: 1px solid #2196F3; /* Blue for focus */
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.4);
+}
+
+/* Payment Button */
+.payment-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #FF6F61, #FF8C00);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, font-size 0.2s;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Hover effect for Payment Button */
+.payment-btn:hover {
+    background: linear-gradient(45deg, #FF8C00, #FF6F61);
+    transform: scale(1.05);
+    font-size: 19px;
+}
+
+/* Disabled Payment Button */
+.payment-btn:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+/* Modal Styles */
+.payment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Modal Heading */
+.modal-content h2 {
+    color: #FF6F61;  /* Red-Orange for success message */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* Payment Details Sections */
+.payment-details {
+    margin-top: 15px;
+    background: #f0f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Styled input fields in Payment Details */
+.payment-details input {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for input fields in Payment Details */
+.payment-details input:hover {
+    border-color: #FF6F61;
+    background-color: #fff;
+}
+
+.payment-details input:focus {
+    border-color: #FF6F61;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.4);
+}
+
+/* Enhanced Background for Payment Container */
+.payment-container {
+    background: #f0f9ff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Label hover effect */
+.payment-form label:hover {
+    color: #FF6F61;
+    font-weight: 600;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Select Box */
+.payment-form select {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 8px;
+}
+
+/* Styling for Submit Button (Disabled/Enabled) */
+.payment-btn:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.payment-btn:not(:disabled) {
+    background: linear-gradient(45deg, #FF6F61, #FF8C00);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-btn:not(:disabled):hover {
+    background: linear-gradient(45deg, #FF8C00, #FF6F61);
+}
+
+/* Payment Details Border on Hover */
+.payment-details input:focus {
+    border-color: #FF6F61;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.4);
+}
+

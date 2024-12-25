@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Fee & Financial Record - Library Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="latefeecss.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Late Fee Calculation & Financial Record</h1>
+
+        <!-- Late Fee Calculation Section -->
+        <section class="late-fee-section">
+            <h2>Late Fee Calculation</h2>
+            <form id="late-fee-form">
+                <div class="input-group">
+                    <label for="book-title">Book Title:</label>
+                    <input type="text" id="book-title" required>
+                </div>
+                <div class="input-group">
+                    <label for="due-date">Due Date:</label>
+                    <input type="date" id="due-date" required>
+                </div>
+                <div class="input-group">
+                    <label for="return-date">Return Date:</label>
+                    <input type="date" id="return-date" required>
+                </div>
+                <button type="submit">Calculate Late Fee</button>
+            </form>
+
+            <!-- Late Fee Result -->
+            <div id="late-fee-result" class="result"></div>
+        </section>
+
+        <!-- Financial Record Section -->
+        <section class="financial-record-section">
+            <h2>Your Financial Record</h2>
+            <table id="financial-record">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Amount Paid</th>
+                        <th>Payment Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1984</td>
+                        <td>$12.50</td>
+                        <td>2024-09-15</td>
+                    </tr>
+                    <tr>
+                        <td>Brave New World</td>
+                        <td>$14.00</td>
+                        <td>2024-10-05</td>
+                    </tr>
+                    <tr>
+                        <td>To Kill a Mockingbird</td>
+                        <td>$18.50</td>
+                        <td>2024-10-22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        // Late Fee Calculation Logic
+        document.getElementById('late-fee-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const dueDate = new Date(document.getElementById('due-date').value);
+            const returnDate = new Date(document.getElementById('return-date').value);
+            const daysLate = Math.floor((returnDate - dueDate) / (1000 * 60 * 60 * 24));
+
+            const lateFeePerDay = 1.5; // Assuming a late fee of $1.5 per day
+            let lateFee = 0;
+
+            if (daysLate > 0) {
+                lateFee = daysLate * lateFeePerDay;
+            }
+
+            const resultElement = document.getElementById('late-fee-result');
+            if (lateFee > 0) {
+                resultElement.innerHTML = `Your late fee is: $${lateFee.toFixed(2)}`;
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.innerHTML = 'No late fee. Book returned on time.';
+                resultElement.style.color = 'blue';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link rel="stylesheet" href="homepagecss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📚 Welcome to Book Store</h1>
+            <p>Your one-stop shop for all your reading needs</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#featured">Featured Books</a></li>
+            <li><a href="#authors">Top Authors</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="loginpage.html" class="login-btn">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="categories" class="section">
+            <h2>Our Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="fiction">Fiction</div>
+                <div class="category-card" data-category="non-fiction">Non-Fiction</div>
+                <div class="category-card" data-category="mystery">Mystery</div>
+                <div class="category-card" data-category="science-fiction">Science Fiction</div>
+                <div class="category-card" data-category="biographies">Biographies</div>
+                <div class="category-card" data-category="childrens-books">Children’s Books</div>
+            </div>
+            <div id="category-details" class="category-details">
+                <!-- Details and books will be displayed here -->
+            </div>
+        </section>
+
+        <section id="featured" class="section">
+            <h2>Featured Books</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="h1.jpg" alt="Book 1">
+                    <h3>The Great Adventure</h3>
+                    <p>A thrilling journey of discovery.</p>
+                    <button class="buy-btn"><a href="pg.html">Buy</a></button>
+                    <button class="cart-btn">Add to Cart</button>
+                    
+                </div>
+                <div class="featured-card">
+                    <img src="h2.jfif" alt="Book 2">
+                    <h3>Wisdom Unlocked</h3>
+                    <p>Transformative insights for a better life.</p>
+                    <button class="buy-btn"><a href="pg.html">Buy</a></button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+                <div class="featured-card">
+                    <img src="h3.jpeg" alt="Book 3">
+                    <h3>Fantasy Realms</h3>
+                    <p>Explore worlds beyond imagination.</p>
+                    <button class="buy-btn"><a href="pg.html">Buy</a></button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="authors" class="section">
+            <h2>Top Authors</h2>
+            <div class="authors-grid">
+                <div class="author-card" data-author="F. Scott Fitzgerald">F. Scott Fitzgerald</div>
+                <div class="author-card" data-author="Jane Austen">Jane Austen</div>
+                <div class="author-card" data-author="Yuval Noah Harari">Yuval Noah Harari</div>
+                <div class="author-card" data-author="J.K. Rowling">J.K. Rowling</div>
+                <!-- Add other authors here -->
+            </div>
+            <div id="author-details"></div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <h2>User Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Book Haven has an incredible collection! I found everything I was looking for."</p>
+                    <h4>- Emily Johnson</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Fast delivery and great customer service. Highly recommended!"</p>
+                    <h4>- Mark Wilson</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Their recommendations are always spot on. I love shopping here."</p>
+                    <h4>- Sarah Lee</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="subscribe-section">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter and never miss an update!</p>
+            <form class="subscribe-form">
+                <input type="email" class="subscribe-input" placeholder="Enter your email" required>
+                <button type="submit" class="subscribe-btn" id="i1" onclick="change()">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-us-section">
+            <h2>About Us</h2>
+            <p>We are committed to providing the best experience for our users. Our team works tirelessly to ensure quality and satisfaction at every step.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Book Haven. All Rights Reserved.</p>
+            <p>Designed with ❤️ by Book Enthusiasts.</p>
+        </div>
+    </footer>
+
+    <!-- Popup Modal -->
+    
+
+    <div id="cart-popup" class="popup">
+        <div class="popup-content">
+            <p>Successfully added to cart</p>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+    <script>
+        
+// Get the cart buttons
+const cartButtons = document.querySelectorAll('.cart-btn');  // Change this to '.add-to-cart'
+
+// Get the popup and close button
+const popup = document.getElementById('cart-popup');
+const closeButton = document.getElementById('close-popup');
+
+// Add event listener to each cart button
+cartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Show the popup when "Add to Cart" is clicked
+        popup.style.display = 'flex';
+    });
+});
+
+// Add event listener to close the popup
+closeButton.addEventListener('click', () => {
+    popup.style.display = 'none';  // Hide the popup when close is clicked
+});
+// Get all "See More" buttons
+
+
+
+    </script>
+    <script src="homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+/* Import Google Font with Italics */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("main.jpg");
+    background-size: cover;
+}
+
+/* Header Section */
+header {
+    background-color: rgba(223, 223, 72, 0.9);
+    text-align: center;
+    padding: 40px 0;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Main Container for Content (task sections + text) */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 120px);
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    overflow: auto;
+    position: relative;
+}
+
+/* Task Sections (Left side) */
+.task-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40%;
+    padding: 10px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.task-section {
+    text-align: center;
+    padding: 10px;
+    margin: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    height: 70px;
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Multiple Background Colors for Task Sections */
+.task-section:nth-child(odd) {
+    background-color: rgba(255, 99, 71, 0.7); /* Tomato */
+}
+
+.task-section:nth-child(even) {
+    background-color: rgba(70, 130, 180, 0.7); /* SteelBlue */
+}
+
+.task-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Hover Effect */
+.task-section:hover {
+    background-color: #00bcd4;
+}
+
+.task-section:hover h2 {
+    color: #ffffff;
+}
+
+/* Text Animation for Right Section (Fixed in the middle) */
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fix text in place */
+    right: 10px;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    width: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Attractive Font for Text (Updated to use 'Lora' italic style) */
+.text-animation {
+    font-family: 'Lora', serif; /* Changed to 'Lora' font */
+    font-size: 5vw; /* Adjust size for better responsiveness */
+    font-weight: bold;
+    font-style: italic; /* Apply italic style */
+    display: inline-block;
+    letter-spacing: 0.1em;
+    color:white;
+    animation: showText 10s infinite; /* Reduced animation time */
+    color: transparent; /* Initial color */
+    background: linear-gradient(45deg, #ff6347, #32cd32, #1e90ff, #ff4500, #8a2be2, #ff1493); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+/* Keyframe for the text animation */
+@keyframes showText {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Apply Multiple Colors to Text */
+.text-animation span:nth-child(1) {
+     /* Tomato */
+}
+
+.text-animation span:nth-child(2) {
+    color:white; /* LimeGreen */
+}
+
+.text-animation span:nth-child(3) {
+    color:white; /* DodgerBlue */
+}
+
+.text-animation span:nth-child(4) {
+    color:white; /* OrangeRed */
+}
+
+.text-animation span:nth-child(5) {
+    color:white;/* BlueViolet */
+}
+
+.text-animation span:nth-child(6) {
+    color:white; /* DeepPink */
+}
+
+/* Animation for Letter by Letter */
+.text-animation span {
+    display: inline-block;
+    animation: letterAnimation 2s ease forwards;
+}
+
+/* Keyframe for Letter Animation */
+@keyframes letterAnimation {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Delayed Animation for each Letter */
+.text-animation span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.text-animation span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.text-animation span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.text-animation span:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.text-animation span:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.text-animation span:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 768px) {
+    .task-section {
+        padding: 10px;
+        width: 100%;
+        height: 60px;
+    }
+
+    .text-animation {
+        font-size: 8vw;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .task-sections {
+        width: 100%;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+}
+/* Updated Text Container for Vertical Alignment */
+/* Updated Text Container for Right-Side Positioning */
+/* Updated Text Container for Lower Position */
+/* Updated Text Container for Position */
+/* Updated Text Container for Position */
+.text-container {
+    display: flex;
+    justify-content: flex-start; /* Start animation from the right */
+    align-items: flex-end; /* Align to the bottom */
+    position: fixed;
+    right: 0;
+    top: 60%; /* Position it lower on the page */
+    width: 50%; /* Restrict animation to half the webpage width */
+    height: auto;
+    overflow: hidden;
+    text-align: left; /* Align text to the left as it animates */
+}
+
+/* Styling for the Horizontal Animation */
+.text-animation {
+    font-family: 'Lora', serif;
+    font-size: 3vw; /* Adjusted size */
+    font-weight: bold;
+    font-style: italic;
+    color: white; /* Entire text is white */
+    display: inline-block;
+    white-space: nowrap;
+    animation: moveText 10s linear infinite; /* Animate text from right to left */
+}
+
+/* Keyframe Animation for Moving Text */
+@keyframes moveText {
+    0% {
+        transform: translateX(100%); /* Start outside the viewport on the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move outside the viewport on the left */
+    }
+}

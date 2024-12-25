@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center & Report Issue</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">Help Center</h1>
+            <p class="header-subtitle">We're here to assist you with any issues or queries.</p>
+        </div>
+    </header>
+    <main>
+        <section class="help-section">
+            <h2>How can we assist you?</h2>
+            <div class="help-cards">
+                <div class="help-card">
+                    <i class="icon fas fa-bug"></i>
+                    <h3>Report an Issue</h3>
+                    <p>If you encounter any problems, let us know, and we’ll work on fixing them!</p>
+                    <a href="#report-form" class="btn">Report Now</a>
+                </div>
+                <div class="help-card">
+                    <i class="icon fas fa-life-ring"></i>
+                    <h3>Get Help</h3>
+                    <p>Browse our FAQs or contact support for quick solutions.</p>
+                    <a href="#contact-support" class="btn">Contact Support</a>
+                </div>
+                <div class="help-card">
+                    <i class="icon fas fa-file-alt"></i>
+                    <h3>Documentation</h3>
+                    <p>Access guides and documentation to get detailed help on our services.</p>
+                    <a href="#documentation" class="btn">View Docs</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="report-form" class="report-section">
+            <h2>Report an Issue</h2>
+            <form class="report-form" id="reportForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue-type">Issue Type</label>
+                    <select id="issue-type" required>
+                        <option value="">Select an option</option>
+                        <option value="bug">Bug</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" placeholder="Describe the issue in detail" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="contact-support" class="contact-section">
+            <h2>Contact Support</h2>
+            <p>If you need further assistance, feel free to reach out to us via email or live chat.</p>
+            <a href="mailto:support@example.com" class="contact-link">Email Us</a>
+        </section>
+
+        <section id="documentation" class="docs-section">
+            <h2>Documentation</h2>
+            <p>Find detailed guides and FAQs in our documentation section.</p>
+            <a href="#" class="btn-docs">Go to Documentation</a>
+        </section>
+
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h2>Successfully Submitted</h2>
+            <p>Your issue has been successfully reported.</p>
+            <button id="closeModal" class="btn">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Help Center. All rights reserved.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Get the modal and close button
+        const modal = document.getElementById('successModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // When the user submits the form
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+
+            // Show the success modal
+            modal.style.display = 'block';
+        });
+
+        // Close the modal when the close button is clicked
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

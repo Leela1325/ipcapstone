@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="registercss.css">
+    <link rel="preload" href="b1.jfif" as="image">
+</head>
+<body>
+
+    <form id="form1">
+      
+        <label id="label1">Register Form 📝</label><br>
+        <label id="label2">Name:</label><br>
+        <input type="text" placeholder="  Enter Name ......" id="i1" minlength="5" required><br>
+        <span id="sp1" style="color:red;"></span><br>
+        <label id="email">Email Id:</label><br>
+        <input type="text"  placeholder="  Enter Email Id ......" id="i2" required><br>
+        <span  id="sp2" style="color:red;"></span>
+        <label id="mobile">Mobile No:</label><br>
+        <input type="tel" maxlength="10"  placeholder="  Enter Mobile No ......" id="i3" required><br>
+        <span  id="sp3" style="color:red;"></span>
+        <label id="pass1">Enter Password:</label><br>
+        <input type="password" maxlength="15"  placeholder="  Enter Password  ......" id="i4" required><br>
+        <span  id="sp4" style="color:red;"></span>
+        <label id="pass2">Confirm Password:</label><br>
+        <input type="password" maxlength="15"  placeholder="  Confirm your Password ......" id="i5" required><br>
+        <span  id="sp5" style="color:red;"></span>
+        <div id="d1">
+       
+        <button id="id2">Cancel</button>
+        <button id="id1" type="submit">Register</button>
+</div>
+    </form>
+    <script src="registerjs.js"></script>
+</body>
+</html>
